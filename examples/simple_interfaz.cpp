@@ -27,8 +27,8 @@ int main(int argc, const char* argv[])
 {
 	HINSTANCE hinstLib;
 	hinstLib = LoadLibrary("FirmataDll.dll");
-	OPEN ProcAdd = (OPEN)GetProcAddress(hinstLib, "Open");
-	ENUM ProcEnum = (ENUM)GetProcAddress(hinstLib, "EnumeratePorts");
+	OPEN ProcAdd = (OPEN)GetProcAddress(hinstLib, "open");
+	ENUM ProcEnum = (ENUM)GetProcAddress(hinstLib, "enumeratePorts");
 	DW digitalWrite = (DW)GetProcAddress(hinstLib, "digitalWrite");
 	RA reportAnalog = (DW)GetProcAddress(hinstLib, "reportAnalog");
 	AR analogRead = (AR)GetProcAddress(hinstLib, "analogRead");

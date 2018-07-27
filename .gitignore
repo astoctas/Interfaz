@@ -3,3 +3,6 @@
 /examples/Debug/simple_interfaz.tlog/*.tlog
 /Debug
 /examples/.vs/simple_interfaz/v15
+/examples/Debug
+/examples/Release
+/examples/.vs
