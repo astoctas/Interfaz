@@ -22,7 +22,7 @@ namespace interfaz {
 			Sleep(4000); // 4 segs para reporte de version
 
 			serialio = new firmata::FirmSerial(port);
-			f = new firmata::Firmata<firmata::Base, firmata::I2C, firmata::Stepper>(serialio);
+			f = new firmata::Firmata<firmata::Base, firmata::I2C, firmata::AccelStepper, firmata::DC>(serialio);
 			
 		}
 		catch (firmata::IOException e) {
@@ -48,8 +48,6 @@ namespace interfaz {
 			}
 		}
 	}
-
-
 
 
 }

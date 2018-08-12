@@ -110,6 +110,9 @@
     <ProjectReference Include="..\..\FirmataDll\FirmataDll.vcxproj">
       <Project>{ec1bc83d-18ba-4ad6-980e-c3ad6a4561b2}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\..\InterfazDll\InterfazDll.vcxproj">
+      <Project>{f1d0e856-1206-4428-8955-7dd98313df47}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
