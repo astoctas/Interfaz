@@ -55,6 +55,7 @@ typedef void (__stdcall *I2CPUSH)(WORD);
 typedef WORD (__stdcall *I2CPOP)();
 typedef void (__stdcall *I2CL)(PCSTR);
 typedef void (__stdcall *I2CC)(uint8_t, PCSTR, PCSTR);
+typedef void (__stdcall *I2CWS)(uint8_t, PCSTR);
 
 
 int main(int argc, const char* argv[])
@@ -75,7 +76,8 @@ int main(int argc, const char* argv[])
 	I2CPUSH pushI2C = (I2CPUSH)GetProcAddress(hinstLib, "pushI2C");
 	I2CPOP popI2C = (I2CPOP)GetProcAddress(hinstLib, "popI2C");
 	I2CL I2CLoad = (I2CL)GetProcAddress(hinstLib, "I2CLoad");
-	I2CC I2CConfig = (I2CC)GetProcAddress(hinstLib, "I2CConfig");
+	I2CC I2CCommand = (I2CC)GetProcAddress(hinstLib, "I2CCommand");
+	I2CWS I2CwriteStr = (I2CWS)GetProcAddress(hinstLib, "I2CwriteStr");
 	//cout << (ProcEnum)();
 	char port[5] = "COM6";
 	BYTE b[6] = {};
@@ -99,10 +101,28 @@ int main(int argc, const char* argv[])
 
 	(pinMode)(45, 4);
 	(analogWrite)(45, 100);
-	*/
-	//(I2CLoad)("LCD");
+	(I2CLoad)("LCD");
+	(I2CCommand)(0, "backlight", "");
+	(I2CCommand)(0, "blink_off", "");
+	(I2CCommand)(0, "cursor_off", "");
+	(I2CCommand)(0, "setCursor", "5 0");
+	(I2CwriteStr)(0, "Interfaz!");
+	 */
 	//(I2CConfig)(0x1E, "setModeContinous", "");
+	/*
+	l->backlight();
+	l->blink_off();
+	l->cursor_off();
+	l->setCursor(15, 0);
+	l->print("Interfaz");
+	l->setCursor(15, 1);
+	l->print("Neotec");
+	for (int j = 0; j < 20; j++) {
+		l->scrollDisplayLeft();
+		Sleep(100);
 
+	}
+	*/
 
 	//(reportI2C)(0x1E, 0x03, 6);
 

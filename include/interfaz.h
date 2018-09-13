@@ -5,6 +5,7 @@
 #include <map>
 #include <string>
 
+#include "I2CPlugin.h"
 #include "dc.h"
 #include "stepper.h"
 #include "servo.h"
@@ -25,7 +26,8 @@ namespace interfaz {
 		Interfaz(char* port);
 		~Interfaz();
 
-		std::map<uint8_t, I2Cplugin*> I2Cplugins;
+		//std::map<uint8_t, I2Cplugin*> I2Cplugins;
+		std::vector<I2Cplugin*> I2Cplugins;
 
 		void applyConfig();
 		void setConfig(const char* model);
@@ -35,7 +37,9 @@ namespace interfaz {
 		void outputOn();
 		void outputOff();
 
-
+		uint8_t I2CLoad(const char* libname);
+		void I2CCommand(uint8_t index, const char* cmd, uint8_t* data);
+		void I2CwriteStr(uint8_t index, const char* str);
 
 	private:
 		uint8_t led = 13;
@@ -49,8 +53,9 @@ namespace interfaz {
 			uint8_t enable, in1, in2;
 	};
 		struct stepper {
-			uint8_t enable1, enable2;
-			uint8_t in1, in2, in3, in4;
+			uint8_t step, dir;
+			uint8_t enable;
+			uint8_t invert;
 		};
 
 

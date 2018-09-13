@@ -7,13 +7,13 @@
 
 #define MODE_STEPPER 0x08
 
-#define STEPPER_TYPE_DRIVER = 1
-#define STEPPER_TYPE_TWO_WIRE = 2
-#define STEPPER_TYPE_THREE_WIRE = 3
-#define STEPPER_TYPE_FOUR_WIRE = 4
+#define STEPPER_TYPE_DRIVER		1
+#define STEPPER_TYPE_TWO_WIRE	2
+#define STEPPER_TYPE_THREE_WIRE 3
+#define STEPPER_TYPE_FOUR_WIRE  4
 
-#define STEPPER_STEP_SIZE_WHOLE = 1
-#define STEPPER_STEP_SIZE_HALF = 0
+#define STEPPER_STEP_SIZE_WHOLE 1
+#define STEPPER_STEP_SIZE_HALF  0
 
 #pragma once
 using namespace interfaz;
@@ -25,13 +25,15 @@ namespace interfaz {
 
 	class Stepper {
 	public:
-		Stepper(interfaz::Interfaz * _i, uint8_t _deviceNum, uint8_t _enable1, uint8_t _enable2, uint8_t _in1, uint8_t _in2, uint8_t _in3, uint8_t _in4);
+		Stepper(interfaz::Interfaz * _i, uint8_t _deviceNum, uint8_t _step, uint8_t _dir, uint8_t _enable, uint8_t _invert);
 		~Stepper();
 
 		uint8_t direction = 0;
 		double speed = 100;
-		uint8_t deviceNum = 0, type = 4, stepSize = 1;
-		void config(uint8_t _deviceNum, uint8_t _type, uint8_t _stepSize, uint8_t _dirOrMotor1Pin, uint8_t _dirOrMotor2Pin, uint8_t _motorPin3, uint8_t _motorPin4, uint8_t enablePin);
+		uint8_t deviceNum = 0;
+		uint8_t type = STEPPER_TYPE_DRIVER;
+		uint8_t stepSize = STEPPER_STEP_SIZE_WHOLE;
+		void config(uint8_t _deviceNum, uint8_t _type, uint8_t _stepSize, uint8_t _stepOrMotor1Pin, uint8_t _dirOrMotor2Pin, uint8_t _enablePin, uint8_t _invertPins);
 		void setConfig();
 		void finishCallback();
 		void steps(uint16_t _steps);
@@ -41,9 +43,8 @@ namespace interfaz {
 		void stop();
 
 		uint8_t status;
-		uint8_t enable1, enable2, in1, in2, in3, in4;
+		uint8_t enable, step, dir, invertPins;
 	private:
-		void setPins();
 		interfaz::Interfaz* i;
 		uint8_t on = 0;
 
