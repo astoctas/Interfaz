@@ -23,7 +23,7 @@ namespace interfaz {
 	class Interfaz : public Arduino
 	{
 	public:
-		Interfaz(char* port);
+		Interfaz(char* _port, uint8_t _deviceNum);
 		~Interfaz();
 
 		//std::map<uint8_t, I2Cplugin*> I2Cplugins;
@@ -33,20 +33,34 @@ namespace interfaz {
 		void setConfig(const char* model);
 		void setPin(uint8_t pin, uint8_t mode);
 
-		void setOutputs(uint8_t* _outputs);
-		void outputOn();
-		void outputOff();
+		void setOutputs(std::vector<uint8_t> _outputs);
+		void setSteppers(std::vector<uint8_t> _outputs);
+		void setServos(std::vector<uint8_t> _outputs);
+		void outputsOn();
+		void outputsOff();
+		void outputsDir(uint8_t dir);
+		void outputsSpeed(uint8_t speed);
+		void outputsBrake();
+		void outputsReverse();
+		void steppersSteps(uint16_t _steps);
+		void steppersStop();
+		void steppersDir(uint8_t dir);
+		void servosPosition(uint8_t pos);
 
 		uint8_t I2CLoad(const char* libname);
 		void I2CCommand(uint8_t index, const char* cmd, uint8_t* data);
 		void I2CwriteStr(uint8_t index, const char* str);
 
+		void close();
+
 	private:
 		uint8_t led = 13;
-		std::vector<uint8_t> outputs, steppers, inputs;
+		std::vector<uint8_t> outputs, steppers, servos, inputs;
 		std::vector<interfaz::DC*> _dc;
 		std::vector<interfaz::Stepper*> _steppers;
 		std::vector<interfaz::Servo*> _servos;
+		uint8_t deviceNum;
+		char* port;
 
 
 		struct output {
@@ -60,8 +74,8 @@ namespace interfaz {
 
 
 	struct _config {
-		std::vector<output> outputs;
-		std::vector<stepper> steppers;
+		int max_dc;
+		int max_steppers;
 		std::vector<uint8_t> servos;
 		std::vector<uint8_t> inputs;
 	} config;

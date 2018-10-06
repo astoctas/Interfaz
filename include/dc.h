@@ -15,7 +15,7 @@ namespace interfaz {
 
 	class DC {
 	public:
-		DC(interfaz::Interfaz * _i, uint8_t _deviceNum, uint8_t _enable, uint8_t _in1, uint8_t _in2);
+		DC(interfaz::Interfaz * _i, uint8_t _deviceNum);
 		~DC();
 
 		uint8_t direction = 0, power = 255;

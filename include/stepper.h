@@ -25,7 +25,7 @@ namespace interfaz {
 
 	class Stepper {
 	public:
-		Stepper(interfaz::Interfaz * _i, uint8_t _deviceNum, uint8_t _step, uint8_t _dir, uint8_t _enable, uint8_t _invert);
+		Stepper(interfaz::Interfaz * _i, uint8_t _deviceNum);
 		~Stepper();
 
 		uint8_t direction = 0;
@@ -36,7 +36,7 @@ namespace interfaz {
 		void config(uint8_t _deviceNum, uint8_t _type, uint8_t _stepSize, uint8_t _stepOrMotor1Pin, uint8_t _dirOrMotor2Pin, uint8_t _enablePin, uint8_t _invertPins);
 		void setConfig();
 		void finishCallback();
-		void steps(uint16_t _steps);
+		void steps(int32_t _steps);
 		void invert();
 		void setDirection(uint8_t dir);
 		void setSpeed(double _speed);

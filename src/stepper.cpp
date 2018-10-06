@@ -7,8 +7,8 @@ using namespace std;
 
 namespace interfaz {
 
-	Stepper::Stepper(interfaz::Interfaz * _i, uint8_t _deviceNum, uint8_t _step, uint8_t _dir, uint8_t _enable, uint8_t _invert)
-		: i(_i), deviceNum(_deviceNum), step(_step), dir(_dir),  enable(_enable), invertPins(_invert) {
+	Stepper::Stepper(interfaz::Interfaz * _i, uint8_t _deviceNum)
+		: i(_i), deviceNum(_deviceNum) {
 		//setConfig();
 	}
 
@@ -30,12 +30,12 @@ namespace interfaz {
 		i->f->configStepper(deviceNum, type, stepSize, step, dir, enable, invertPins);
 	}
 
-	void Stepper::steps(uint16_t _steps) {
+	void Stepper::steps(int32_t _steps) {
 		int32_t steps = _steps;
-		if (direction) steps = -1 * steps;
+		if (steps > 0 && direction) steps = -1 * steps;
 		status = 1;
 		//setPins();
-		i->f->enableOutputsStepper(deviceNum);
+		//i->f->enableOutputsStepper(deviceNum);
 		i->f->stepStepper(deviceNum, steps);
 	}
 
