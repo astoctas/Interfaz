@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HMC5883L", "Plugins\HMC5883
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LCD", "Plugins\LCD\LCD.vcxproj", "{39AA0501-7FD1-432E-BD59-C37F7A2FA2EF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "serial", "..\firmatacpp\vendor\serial\serial.vcxproj", "{EE2C7E68-5904-3E0B-8469-4410A19EB6CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -159,6 +161,18 @@ Global
 		{39AA0501-7FD1-432E-BD59-C37F7A2FA2EF}.RelWithDebInfo|x64.Build.0 = Release|x64
 		{39AA0501-7FD1-432E-BD59-C37F7A2FA2EF}.RelWithDebInfo|x86.ActiveCfg = Release|Win32
 		{39AA0501-7FD1-432E-BD59-C37F7A2FA2EF}.RelWithDebInfo|x86.Build.0 = Release|Win32
+		{EE2C7E68-5904-3E0B-8469-4410A19EB6CA}.Debug|x64.ActiveCfg = Debug|Win32
+		{EE2C7E68-5904-3E0B-8469-4410A19EB6CA}.Debug|x86.ActiveCfg = Debug|Win32
+		{EE2C7E68-5904-3E0B-8469-4410A19EB6CA}.Debug|x86.Build.0 = Debug|Win32
+		{EE2C7E68-5904-3E0B-8469-4410A19EB6CA}.MinSizeRel|x64.ActiveCfg = MinSizeRel|Win32
+		{EE2C7E68-5904-3E0B-8469-4410A19EB6CA}.MinSizeRel|x86.ActiveCfg = MinSizeRel|Win32
+		{EE2C7E68-5904-3E0B-8469-4410A19EB6CA}.MinSizeRel|x86.Build.0 = MinSizeRel|Win32
+		{EE2C7E68-5904-3E0B-8469-4410A19EB6CA}.Release|x64.ActiveCfg = Release|Win32
+		{EE2C7E68-5904-3E0B-8469-4410A19EB6CA}.Release|x86.ActiveCfg = Release|Win32
+		{EE2C7E68-5904-3E0B-8469-4410A19EB6CA}.Release|x86.Build.0 = Release|Win32
+		{EE2C7E68-5904-3E0B-8469-4410A19EB6CA}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|Win32
+		{EE2C7E68-5904-3E0B-8469-4410A19EB6CA}.RelWithDebInfo|x86.ActiveCfg = RelWithDebInfo|Win32
+		{EE2C7E68-5904-3E0B-8469-4410A19EB6CA}.RelWithDebInfo|x86.Build.0 = RelWithDebInfo|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

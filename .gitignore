@@ -1,4 +1,5 @@
 /Debug/Interfaz.tlog/*.tlog
+/Release/Interfaz.tlog/*.tlog
 /.vs/Interfaz/v15
 /examples/Debug/simple_interfaz.tlog/*.tlog
 /Debug
