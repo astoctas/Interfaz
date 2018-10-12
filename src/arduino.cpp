@@ -40,8 +40,9 @@ namespace interfaz {
 		while (true) {
 			//cout << "parse" << endl;;
 			try {
-				if(serialio->isOpen() && serialio->available())
-					f->parse();
+				if(!f->pauseParse)
+					if(serialio->isOpen() && serialio->available())
+						f->parse();
 			}
 			catch (exception e) {
 				cout << e.what() << endl;

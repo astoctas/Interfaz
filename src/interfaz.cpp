@@ -40,7 +40,7 @@ namespace interfaz {
 		_dc.at(0)->turnOff();
 		_servos.at(0)->setPosition(100);
 		//_steppers.at(0)->setSpeed(100);
-		
+
 
 		_steppers.at(0)->steps(-100);
 		_steppers.at(0)->invert();
@@ -51,7 +51,22 @@ namespace interfaz {
 		//_steppers.at(0)->stop();
 		//f->writeI2C(0x27, { 0x00, 0x02});
 		//f->writeI2C(0x27, { 0x01, 65});
-		
+
+		*/
+		//f->configI2C(200);
+		/*
+		std::cout << "leyendo" << endl;
+		f->writeI2C(0x40, {0xFE});
+		std::vector<uint8_t> data = f->readI2COnce(0x40, 0xe7, 1);
+		std::cout << std::to_string(data.size()) << endl;
+		for (auto i = data.begin(); i != data.end(); ++i)
+			std::cout << *i << ' ';
+
+		std::vector<uint8_t>  data = f->readI2COnce(0x40, 0xe3, 3);
+		std::cout << std::to_string(data.size()) << endl;
+		for (auto i = data.begin(); i != data.end(); ++i)
+			std::cout << *i << ' ';
+		std::cout << "fin leyendo" << endl;
 		*/
 
 
@@ -103,6 +118,7 @@ namespace interfaz {
 	void Interfaz::setServos(std::vector<uint8_t> _outputs) {
 		servos.assign(_outputs.begin(), _outputs.end());
 	}
+
 
 	void Interfaz::outputsOn() {
 		for (vector<uint8_t>::iterator it = outputs.begin(); it != outputs.end(); it++) {
@@ -173,6 +189,56 @@ namespace interfaz {
 				_servos.at(*it - 1)->setPosition(pos);
 		}
 	}
+
+	void Interfaz::setAnalog(uint8_t channel, uint8_t enable) {
+		inputs.clear();
+		if(enable) inputs.push_back(channel);
+		f->reportAnalog(channel - 1, enable);
+	}
+
+	uint16_t Interfaz::analogValue() {
+		if (inputs.size()) {
+			string a("A");
+			string p(std::to_string(inputs.at(0) - 1));
+			a.append(p);
+			return f->analogRead(a);
+		}
+		return -1;
+	}
+
+	void Interfaz::setI2C(uint8_t address, uint32_t delay) {
+		i2c.clear();
+		i2c.push_back(address);
+		f->configI2C(delay);
+	}
+
+	void Interfaz::i2cReport(uint16_t _register, uint32_t bytes) {
+		if (i2c.size()) {
+			i2cRegister = _register;
+			f->reportI2C(i2c.at(0), _register, bytes);
+		}
+	}
+
+	std::vector<uint8_t> Interfaz::i2cRead(uint16_t _register, uint32_t bytes) {
+		if (i2c.size()) {
+			return f->readI2COnce(i2c.at(0), _register, bytes);
+		}
+		return {};
+	}
+
+	std::vector<uint8_t> Interfaz::i2cValue() {
+		if (i2c.size() && i2cRegister) {
+			return f->readI2C(i2c.at(0), i2cRegister);
+		}
+		return {};
+	}
+
+	void Interfaz::i2cWrite(std::vector<uint8_t> data) {
+		if (i2c.size()) {
+			return f->writeI2C(i2c.at(0), data);
+		}
+	}
+
 
 	uint8_t Interfaz::I2CLoad(const char* libname) {
 

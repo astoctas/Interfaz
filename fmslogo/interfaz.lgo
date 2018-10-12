@@ -1,0 +1,160 @@
+to a
+dllcall [v outputsOff]
+end
+
+to closeport
+dllcall [v close]
+end
+
+to dir.a
+dllcall [v outputsDir w 0]
+end
+
+to dir.b
+dllcall [v outputsDir w 1]
+end
+
+to e 
+dllcall [v outputsOn]
+end
+
+to entrada :n
+dllcall sentence [v analogOn w ] :n
+end
+
+to f
+dllcall [v outputsBrake]
+end
+
+to i
+dllcall [v outputsReverse]
+end
+
+to oir 
+op dllcall [w analogValue]
+end
+
+to pap :n
+if not numberp :n [print [PAP necesita un numero] stop]
+dllcall sentence [v steppers s ] :n
+end
+
+to pap.a 
+dllcall [v steppersStop ]
+end
+
+to pap.dir.a
+dllcall [v steppersDir w 0]
+end
+
+to pap.dir.b
+dllcall [v steppersDir w 1]
+end
+
+to paps :n
+if not listp :n [print [PAPS necesita una lista] stop]
+dllcall sentence [v steppers s ] parselist :n
+end
+
+to parselist :l
+make "_i 1
+make "_o char 32
+repeat count :l [ make "_o word :_o word item :_i :l char 32 make "_i :_i + 1]
+op butfirst :_o
+end
+
+to pasos :n
+dllcall sentence [v steppersSteps l ] :n
+end
+
+to potencia :n
+dllcall sentence [v outputsSpeed w ] :n
+end
+
+to reload 
+dllfree
+dllload "InterfazDLL.dll
+end
+
+to salida :n
+if not numberp :n [print [SALIDAS necesita un numero] stop]
+dllcall sentence [v outputs s ] :n
+end
+
+to salidas :n
+if not listp :n [print [SALIDAS necesita una lista] stop]
+dllcall sentence [v outputs s ] parselist :n
+end
+
+to servo :n
+if not numberp :n [print [SERVO necesita un numero] stop]
+dllcall sentence [v servos s ] :n
+end
+
+to servo.pos :n
+dllcall sentence [v servosPosition w ] :n
+end
+
+to servos :n
+if not listp :n [print [SERVOS necesita una lista] stop]
+dllcall sentence [v servos s ] parselist :n
+end
+
+to start
+dllcall [v open s COM6]
+end
+
+to voir 
+print oir
+voir
+end
+
+to i2c :n
+dllcall sentence [v i2c w 100 w ] :n
+end
+
+to i2c.leer :r :b 
+op dllcall (sentence [v i2cRead b ] :b + 1 [ w ] :b [ w ] :r)
+end
+
+to i2c.entrada :r :b 
+make "_i2cBytes :b 
+dllcall (sentence [v i2cReport w ] :_i2cBytes [ w ] :r)
+end
+
+to i2c.entrada.a :r 
+make "_i2cBytes 0
+dllcall (sentence [v i2cReport w  0 w ] :r)
+end
+
+to i2c.oir 
+if not NAMEP "_i2cBytes [print [I2C no está reportando] STOP]
+if :_i2cBytes = 0 [print [I2C no está reportando] STOP]
+op dllcall (sentence [v i2cValue b ]  :_i2cBytes)
+end
+
+to sht11 
+i2c 64
+end
+
+to sht11.temp 
+make "res i2c.leer 227 3
+make "res (LSHIFT (ascii (item 1 item 1 :res)) 8) + BITAND (ascii (item 2 item 1 :res)) 252
+make "res :res * 175.72
+make "res :res / 65536
+make "res :res - 46.85
+op :res
+end
+
+to sht11.hum 
+make "res i2c.leer 229 3
+make "res (LSHIFT (ascii (item 1 item 1 :res)) 8) + BITAND (ascii (item 2 item 1 :res)) 252
+make "res :res * 125
+make "res :res / 65536
+make "res :res - 6
+op :res
+end
+
+dllload "InterfazDll
+start
+

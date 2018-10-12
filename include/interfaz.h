@@ -42,10 +42,23 @@ namespace interfaz {
 		void outputsSpeed(uint8_t speed);
 		void outputsBrake();
 		void outputsReverse();
+		
 		void steppersSteps(uint16_t _steps);
 		void steppersStop();
 		void steppersDir(uint8_t dir);
+		
 		void servosPosition(uint8_t pos);
+
+		void setAnalog(uint8_t channel, uint8_t enable);
+		uint16_t analogValue();
+
+		void setI2C(uint8_t address, uint32_t delay = 100);
+		void i2cReport(uint16_t _register, uint32_t bytes);
+		std::vector<uint8_t> i2cRead(uint16_t _register, uint32_t bytes);
+		std::vector<uint8_t> i2cValue();
+		void i2cWrite(std::vector<uint8_t> data);
+
+
 
 		uint8_t I2CLoad(const char* libname);
 		void I2CCommand(uint8_t index, const char* cmd, uint8_t* data);
@@ -55,7 +68,8 @@ namespace interfaz {
 
 	private:
 		uint8_t led = 13;
-		std::vector<uint8_t> outputs, steppers, servos, inputs;
+		std::vector<uint8_t> outputs, steppers, servos, inputs, i2c;
+		uint16_t i2cRegister;
 		std::vector<interfaz::DC*> _dc;
 		std::vector<interfaz::Stepper*> _steppers;
 		std::vector<interfaz::Servo*> _servos;

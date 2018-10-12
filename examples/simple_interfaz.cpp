@@ -41,6 +41,7 @@ using namespace std;
 
 
 typedef void (__stdcall *OPEN)(LPSTR);
+typedef void (__stdcall *CLOSE)();
 typedef LPSTR (__stdcall *ENUM)();
 typedef void (__stdcall *DW)(WORD, WORD);
 typedef void (__stdcall *AW)(WORD, DWORD);
@@ -63,6 +64,7 @@ int main(int argc, const char* argv[])
 	HINSTANCE hinstLib;
 	hinstLib = LoadLibrary("InterfazDll.dll");
 	OPEN ProcAdd = (OPEN)GetProcAddress(hinstLib, "open");
+	CLOSE ProcClose = (CLOSE)GetProcAddress(hinstLib, "close");
 	ENUM ProcEnum = (ENUM)GetProcAddress(hinstLib, "enumeratePorts");
 	DW digitalWrite = (DW)GetProcAddress(hinstLib, "digitalWrite");
 	RA reportAnalog = (DW)GetProcAddress(hinstLib, "reportAnalog");
@@ -82,7 +84,11 @@ int main(int argc, const char* argv[])
 	char port[5] = "COM6";
 	BYTE b[6] = {};
 	(ProcAdd)(port);
+	(ProcClose);
+	(ProcClose);
+
 	/*
+	Sleep(1000);
 	(reportAnalog)(1, 1);
 	(reportAnalog)(2, 1);
 	(reportAnalog)(3, 1);
@@ -151,6 +157,9 @@ int main(int argc, const char* argv[])
 		}
 		wcout << endl;
 		*/
+		//(reportAnalog)(1, 1);
+		(ProcClose);
+
 		_sleep(500);
 	}
 }
