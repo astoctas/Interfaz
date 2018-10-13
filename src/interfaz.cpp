@@ -214,7 +214,6 @@ namespace interfaz {
 
 	void Interfaz::i2cReport(uint16_t _register, uint32_t bytes) {
 		if (i2c.size()) {
-			i2cRegister = _register;
 			f->reportI2C(i2c.at(0), _register, bytes);
 		}
 	}
@@ -226,9 +225,9 @@ namespace interfaz {
 		return {};
 	}
 
-	std::vector<uint8_t> Interfaz::i2cValue() {
-		if (i2c.size() && i2cRegister) {
-			return f->readI2C(i2c.at(0), i2cRegister);
+	std::vector<uint8_t> Interfaz::i2cValue(uint16_t _register) {
+		if (i2c.size()) {
+			return f->readI2C(i2c.at(0), _register);
 		}
 		return {};
 	}

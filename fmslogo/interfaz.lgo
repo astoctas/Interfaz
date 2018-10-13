@@ -110,7 +110,11 @@ voir
 end
 
 to i2c :n
-dllcall sentence [v i2c w 100 w ] :n
+dllcall sentence [v i2c w 50 w ] :n
+end
+
+to i2c.delay :n :d
+dllcall (sentence [v i2c w ] :d [ w ] :n)
 end
 
 to i2c.leer :r :b 
@@ -127,33 +131,13 @@ make "_i2cBytes 0
 dllcall (sentence [v i2cReport w  0 w ] :r)
 end
 
-to i2c.oir 
+to i2c.oir :r
 if not NAMEP "_i2cBytes [print [I2C no está reportando] STOP]
 if :_i2cBytes = 0 [print [I2C no está reportando] STOP]
-op dllcall (sentence [v i2cValue b ]  :_i2cBytes)
+op dllcall (sentence [v i2cValue b ]  :_i2cBytes [ w ] :r )
 end
 
-to sht11 
-i2c 64
-end
 
-to sht11.temp 
-make "res i2c.leer 227 3
-make "res (LSHIFT (ascii (item 1 item 1 :res)) 8) + BITAND (ascii (item 2 item 1 :res)) 252
-make "res :res * 175.72
-make "res :res / 65536
-make "res :res - 46.85
-op :res
-end
-
-to sht11.hum 
-make "res i2c.leer 229 3
-make "res (LSHIFT (ascii (item 1 item 1 :res)) 8) + BITAND (ascii (item 2 item 1 :res)) 252
-make "res :res * 125
-make "res :res / 65536
-make "res :res - 6
-op :res
-end
 
 dllload "InterfazDll
 start

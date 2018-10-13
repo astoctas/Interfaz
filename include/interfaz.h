@@ -55,7 +55,7 @@ namespace interfaz {
 		void setI2C(uint8_t address, uint32_t delay = 100);
 		void i2cReport(uint16_t _register, uint32_t bytes);
 		std::vector<uint8_t> i2cRead(uint16_t _register, uint32_t bytes);
-		std::vector<uint8_t> i2cValue();
+		std::vector<uint8_t> i2cValue(uint16_t _register);
 		void i2cWrite(std::vector<uint8_t> data);
 
 
