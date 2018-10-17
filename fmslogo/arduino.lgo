@@ -1,0 +1,67 @@
+to listports
+print dllcall [v enumeratePorts b 10000]
+end
+
+to openport :p
+dllcall sentence [v open s ] :p
+end
+
+to closeport
+dllcall [v close]
+end
+
+to reportAnalog :channel :enable
+dllcall (sentence [v reportAnalog w ] :enable [ w ] :channel)
+end
+
+to reportDigital :port :enable
+dllcall (sentence [v reportDigital w ] :enable [ w ] :port)
+end
+
+to pinMode :pin :mode
+dllcall (sentence [v pinMode w ] :mode [ w ] :pin)
+end
+
+to servo :pin 
+dllcall (sentence [v servo w ] :pin)
+end
+
+to digitalWrite :pin :value
+dllcall (sentence [v digitalWrite w ] :value [ w ] :pin)
+end
+
+to analogWrite :pin :value
+dllcall (sentence [v analogWrite w ] :value [ w ] :pin)
+end
+
+to setSamplingInterval :value
+dllcall (sentence [v setSamplingInterval w ] :value)
+end
+
+to digitalRead :pin
+op dllcall (sentence [v digitalRead w ] :pin)
+end
+
+to analogRead :channel
+op dllcall (sentence [v analogRead s ] :channel)
+end
+
+to configI2C :value
+dllcall (sentence [v configI2C w ] :value)
+end
+
+to reportI2C :address :register :bytes
+dllcall (sentence [v reportI2C w ] :bytes [ w ] :register [ w ] :address)
+end
+
+to writeI2C :address :data
+dllcall (sentence [v writeI2C s ] :data [ w ] :address)
+end
+
+to readI2C :address :register :bytes
+op dllcall (sentence [v readI2C b ] :bytes [ w ] :register [ w ] :address)
+end
+
+to readI2COnce :address :register :bytes
+op dllcall (sentence [v readI2COnce b ] :bytes [ w ] :bytes [ w ] :register [ w ] :address)
+end

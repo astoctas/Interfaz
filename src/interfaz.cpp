@@ -261,6 +261,8 @@ namespace interfaz {
 	}
 
 	void Interfaz::close() {
+		f->clearLCD();
+		f->printLCD(0, "Desconectado");
 		serialio->close();
 	}
 

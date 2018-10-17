@@ -1,8 +1,12 @@
+to listarpuertos
+print dllcall [v enumeratePorts b 10000]
+end
+
 to a
 dllcall [v outputsOff]
 end
 
-to closeport
+to cerrarpuerto
 dllcall [v close]
 end
 
@@ -53,17 +57,17 @@ end
 
 to paps :n
 if not listp :n [print [PAPS necesita una lista] stop]
-dllcall sentence [v steppers s ] parselist :n
+dllcall sentence [v steppers s ] list2word :n
 end
 
-to parselist :l
+to list2word :l
 make "_i 1
 make "_o char 32
 repeat count :l [ make "_o word :_o word item :_i :l char 32 make "_i :_i + 1]
 op butfirst :_o
 end
 
-to pasos :n
+to pap.pasos :n
 dllcall sentence [v steppersSteps l ] :n
 end
 
@@ -83,7 +87,7 @@ end
 
 to salidas :n
 if not listp :n [print [SALIDAS necesita una lista] stop]
-dllcall sentence [v outputs s ] parselist :n
+dllcall sentence [v outputs s ] list2word :n
 end
 
 to servo :n
@@ -97,11 +101,11 @@ end
 
 to servos :n
 if not listp :n [print [SERVOS necesita una lista] stop]
-dllcall sentence [v servos s ] parselist :n
+dllcall sentence [v servos s ] list2word :n
 end
 
-to start
-dllcall [v open s COM6]
+to abrirpuerto :p
+dllcall sentence [v open s ] :p
 end
 
 to voir 
@@ -128,17 +132,38 @@ end
 
 to i2c.entrada.a :r 
 make "_i2cBytes 0
+make "_i2cRegister :r
 dllcall (sentence [v i2cReport w  0 w ] :r)
 end
 
-to i2c.oir :r
+to i2c.oir 
+if not NAMEP "_i2cRegister [print [I2C no está reportando] STOP]
+if :_i2cRegister = 0 [print [I2C no está reportando] STOP]
+op i2c.valor :_i2cRegister
+end
+
+to i2c.valor :r
 if not NAMEP "_i2cBytes [print [I2C no está reportando] STOP]
 if :_i2cBytes = 0 [print [I2C no está reportando] STOP]
 op dllcall (sentence [v i2cValue b ]  :_i2cBytes [ w ] :r )
 end
 
+to i2c.escribir :data
+if not listp :data [print [Se necesita una lista] stop]
+dllcall sentence [v i2cWrite s ] list2word :data
+end
+
+to lcd.es :f :data
+if not numberp :f [print [la fila debe ser un número, 1 o 2] stop]
+make "f modulo (:f + 1) 2
+dllcall (sentence [v lcdWrite s ] list2word :data [ w ] :f)
+end
+
+to lcd.limpiar
+dllcall [v lcdClear ] 
+end
 
 
 dllload "InterfazDll
-start
+
 
