@@ -41,6 +41,7 @@ namespace interfaz {
 		void setDirection(uint8_t dir);
 		void setSpeed(double _speed);
 		void stop();
+		uint8_t getStatus();
 
 		uint8_t status;
 		uint8_t enable, step, dir, invertPins;

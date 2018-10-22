@@ -46,7 +46,7 @@ namespace interfaz {
 		void steppersSteps(uint16_t _steps);
 		void steppersStop();
 		void steppersDir(uint8_t dir);
-		
+		std::vector<uint8_t> steppersStatus();
 		void servosPosition(uint8_t pos);
 
 		void setAnalog(uint8_t channel, uint8_t enable);

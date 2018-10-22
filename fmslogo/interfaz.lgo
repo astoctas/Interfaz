@@ -163,6 +163,10 @@ to lcd.limpiar
 dllcall [v lcdClear ] 
 end
 
+to pap.estado :n
+op ascii item :n item 1 dllcall [v steppersStatus b 20]
+end
+
 
 dllload "InterfazDll
 

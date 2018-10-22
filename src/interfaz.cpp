@@ -183,6 +183,15 @@ namespace interfaz {
 		}
 	}
 
+	std::vector<uint8_t> Interfaz::steppersStatus() {
+		std::vector<uint8_t> result;
+		for (vector<uint8_t>::iterator it = steppers.begin(); it != steppers.end(); it++) {
+			if (*it - 1 < _steppers.size())
+				result.push_back(_steppers.at(*it - 1)->getStatus());
+		}
+		return result;
+	}
+
 	void Interfaz::servosPosition(uint8_t pos) {
 		for (vector<uint8_t>::iterator it = servos.begin(); it != servos.end(); it++) {
 			if (*it - 1 < _servos.size())

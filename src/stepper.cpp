@@ -61,5 +61,9 @@ namespace interfaz {
 		i->f->stopStepper(deviceNum);
 	}
 
+	uint8_t Stepper::getStatus() {
+		return i->f->stepperStatus(deviceNum);
+	}
+
 
 }
