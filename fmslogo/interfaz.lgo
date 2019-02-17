@@ -71,7 +71,7 @@ to pap.pasos :n
 dllcall sentence [v steppersSteps l ] :n
 end
 
-to pot :n
+to v :n
 dllcall sentence [v outputsSpeed w ] :n
 end
 
