@@ -1,0 +1,2 @@
+﻿  simple.cpp
+c:\users\alejandro\documents\interfaz2.0\software\visualstudio\interfaz\examples\simple\simple.cpp(3): fatal error C1083: No se puede abrir el archivo incluir: 'firmata.h': No such file or directory

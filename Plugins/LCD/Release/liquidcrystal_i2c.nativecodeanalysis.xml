@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\user\dropbox\interfaz2.0\software\visualstudio\interfaz\plugins\lcd\</FILEPATH>
+      <FILENAME>liquidcrystal_i2c.cpp</FILENAME>
+      <LINE>33</LINE>
+      <COLUMN>19</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LiquidCrystal_I2C::_numlines' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LiquidCrystal_I2C::{ctor}</FUNCTION>
+    <DECORATED>??0LiquidCrystal_I2C@@QAE@EEE@Z</DECORATED>
+    <FUNCLINE>33</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\user\dropbox\interfaz2.0\software\visualstudio\interfaz\plugins\lcd\</FILEPATH>
+      <FILENAME>liquidcrystal_i2c.cpp</FILENAME>
+      <LINE>33</LINE>
+      <COLUMN>19</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LiquidCrystal_I2C::_displayfunction' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LiquidCrystal_I2C::{ctor}</FUNCTION>
+    <DECORATED>??0LiquidCrystal_I2C@@QAE@EEE@Z</DECORATED>
+    <FUNCLINE>33</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\user\dropbox\interfaz2.0\software\visualstudio\interfaz\plugins\lcd\</FILEPATH>
+      <FILENAME>liquidcrystal_i2c.cpp</FILENAME>
+      <LINE>33</LINE>
+      <COLUMN>19</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LiquidCrystal_I2C::_displaymode' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LiquidCrystal_I2C::{ctor}</FUNCTION>
+    <DECORATED>??0LiquidCrystal_I2C@@QAE@EEE@Z</DECORATED>
+    <FUNCLINE>33</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\user\dropbox\interfaz2.0\software\visualstudio\interfaz\plugins\lcd\</FILEPATH>
+      <FILENAME>liquidcrystal_i2c.cpp</FILENAME>
+      <LINE>33</LINE>
+      <COLUMN>19</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LiquidCrystal_I2C::_displaycontrol' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LiquidCrystal_I2C::{ctor}</FUNCTION>
+    <DECORATED>??0LiquidCrystal_I2C@@QAE@EEE@Z</DECORATED>
+    <FUNCLINE>33</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

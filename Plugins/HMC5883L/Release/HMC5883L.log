@@ -1,0 +1,13 @@
+﻿  stdafx.cpp
+  dllmain.cpp
+  HMC5883L.cpp
+     Creando biblioteca C:\Users\user\Dropbox\Interfaz2.0\Software\VisualStudio\Interfaz\Release\HMC5883L.lib y objeto C:\Users\user\Dropbox\Interfaz2.0\Software\VisualStudio\Interfaz\Release\HMC5883L.exp
+HMC5883L.obj : error LNK2001: símbolo externo "public: __thiscall interfaz::I2Cplugin::I2Cplugin(class interfaz::Interfaz *)" (??0I2Cplugin@interfaz@@QAE@PAVInterfaz@1@@Z) sin resolver
+HMC5883L.obj : error LNK2001: símbolo externo "public: __thiscall interfaz::I2Cplugin::~I2Cplugin(void)" (??1I2Cplugin@interfaz@@QAE@XZ) sin resolver
+HMC5883L.obj : error LNK2001: símbolo externo "public: void __thiscall interfaz::I2Cplugin::setAddress(int)" (?setAddress@I2Cplugin@interfaz@@QAEXH@Z) sin resolver
+HMC5883L.obj : error LNK2001: símbolo externo "protected: class std::vector<unsigned char,class std::allocator<unsigned char> > __thiscall interfaz::I2Cplugin::readI2COnce(unsigned char,unsigned short)" (?readI2COnce@I2Cplugin@interfaz@@IAE?AV?$vector@EV?$allocator@E@std@@@std@@EG@Z) sin resolver
+HMC5883L.obj : error LNK2001: símbolo externo "protected: void __thiscall interfaz::I2Cplugin::reportI2C(unsigned char,unsigned short)" (?reportI2C@I2Cplugin@interfaz@@IAEXEG@Z) sin resolver
+HMC5883L.obj : error LNK2001: símbolo externo "public: unsigned char __thiscall interfaz::I2Cplugin::readI2C8(unsigned char)" (?readI2C8@I2Cplugin@interfaz@@QAEEE@Z) sin resolver
+HMC5883L.obj : error LNK2001: símbolo externo "protected: void __thiscall interfaz::I2Cplugin::writeI2C(class std::vector<unsigned char,class std::allocator<unsigned char> >)" (?writeI2C@I2Cplugin@interfaz@@IAEXV?$vector@EV?$allocator@E@std@@@std@@@Z) sin resolver
+HMC5883L.obj : error LNK2001: símbolo externo "public: virtual int __thiscall interfaz::I2Cplugin::read(unsigned char *)" (?read@I2Cplugin@interfaz@@UAEHPAE@Z) sin resolver
+C:\Users\user\Dropbox\Interfaz2.0\Software\VisualStudio\Interfaz\Release\HMC5883L.dll : fatal error LNK1120: 8 externos sin resolver

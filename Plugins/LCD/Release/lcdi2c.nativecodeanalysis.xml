@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\user\dropbox\interfaz2.0\software\visualstudio\firmatacpp\vendor\serial\include\serial\</FILEPATH>
+      <FILENAME>serial.h</FILENAME>
+      <LINE>131</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>serial::Timeout::{ctor}</FUNCTION>
+    <DECORATED>??0Timeout@serial@@QAE@IIIII@Z</DECORATED>
+    <FUNCLINE>131</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\user\dropbox\interfaz2.0\software\visualstudio\firmatacpp\vendor\serial\include\serial\</FILEPATH>
+      <FILENAME>serial.h</FILENAME>
+      <LINE>682</LINE>
+      <COLUMN>11</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>serial::SerialException::{dtor}</FUNCTION>
+    <DECORATED>??1SerialException@serial@@UAE@XZ</DECORATED>
+    <FUNCLINE>682</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\user\dropbox\interfaz2.0\software\visualstudio\firmatacpp\vendor\serial\include\serial\</FILEPATH>
+      <FILENAME>serial.h</FILENAME>
+      <LINE>717</LINE>
+      <COLUMN>11</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>serial::IOException::{dtor}</FUNCTION>
+    <DECORATED>??1IOException@serial@@UAE@XZ</DECORATED>
+    <FUNCLINE>717</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\user\dropbox\interfaz2.0\software\visualstudio\firmatacpp\vendor\serial\include\serial\</FILEPATH>
+      <FILENAME>serial.h</FILENAME>
+      <LINE>739</LINE>
+      <COLUMN>11</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>serial::PortNotOpenedException::{dtor}</FUNCTION>
+    <DECORATED>??1PortNotOpenedException@serial@@UAE@XZ</DECORATED>
+    <FUNCLINE>739</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

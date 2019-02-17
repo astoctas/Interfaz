@@ -1,0 +1,2 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets(1877,5): warning : The referenced project 'C:\Test\firmatacpp\ZERO_CHECK.vcxproj' does not exist.
+LINK : fatal error LNK1561: se debe definir el punto de entrada

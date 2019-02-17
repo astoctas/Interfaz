@@ -14,12 +14,14 @@ namespace interfaz {
 		}
 
 		try {
+			/*
 			serial::Serial m_serial(port, 57600);
 			if(!m_serial.isOpen())	m_serial.open();
 			m_serial.flush();
 			m_serial.setDTR();
 			m_serial.close();
 			Sleep(4000); // 4 segs para reporte de version
+			*/
 
 			serialio = new firmata::FirmSerial(port);
 			f = new firmata::Firmata<firmata::Base, firmata::I2C, firmata::AccelStepper, firmata::DC, firmata::LCD>(serialio);

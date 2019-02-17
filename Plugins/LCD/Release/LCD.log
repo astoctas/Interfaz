@@ -1,0 +1,13 @@
+﻿  stdafx.cpp
+  dllmain.cpp
+  LCDI2C.cpp
+  LiquidCrystal_I2C.cpp
+     Creando biblioteca C:\Users\user\Dropbox\Interfaz2.0\Software\VisualStudio\Interfaz\Release\LCD.lib y objeto C:\Users\user\Dropbox\Interfaz2.0\Software\VisualStudio\Interfaz\Release\LCD.exp
+LCDI2C.obj : error LNK2001: símbolo externo "public: __thiscall interfaz::I2Cplugin::I2Cplugin(class interfaz::Interfaz *)" (??0I2Cplugin@interfaz@@QAE@PAVInterfaz@1@@Z) sin resolver
+LCDI2C.obj : error LNK2001: símbolo externo "public: __thiscall interfaz::I2Cplugin::~I2Cplugin(void)" (??1I2Cplugin@interfaz@@QAE@XZ) sin resolver
+LCDI2C.obj : error LNK2001: símbolo externo "public: void __thiscall interfaz::I2Cplugin::setAddress(int)" (?setAddress@I2Cplugin@interfaz@@QAEXH@Z) sin resolver
+LCDI2C.obj : error LNK2001: símbolo externo "protected: void __thiscall interfaz::I2Cplugin::writeI2C(class std::vector<unsigned char,class std::allocator<unsigned char> >)" (?writeI2C@I2Cplugin@interfaz@@IAEXV?$vector@EV?$allocator@E@std@@@std@@@Z) sin resolver
+LCDI2C.obj : error LNK2001: símbolo externo "public: virtual void __thiscall interfaz::I2Cplugin::report(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?report@I2Cplugin@interfaz@@UAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) sin resolver
+LCDI2C.obj : error LNK2001: símbolo externo "public: virtual int __thiscall interfaz::I2Cplugin::read(unsigned char *)" (?read@I2Cplugin@interfaz@@UAEHPAE@Z) sin resolver
+LCDI2C.obj : error LNK2001: símbolo externo "public: virtual int __thiscall interfaz::I2Cplugin::readCommand(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,unsigned char *)" (?readCommand@I2Cplugin@interfaz@@UAEHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAE@Z) sin resolver
+C:\Users\user\Dropbox\Interfaz2.0\Software\VisualStudio\Interfaz\Release\LCD.dll : fatal error LNK1120: 7 externos sin resolver

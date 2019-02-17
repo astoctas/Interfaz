@@ -1,0 +1,5 @@
+﻿  stdafx.cpp
+  dllmain.cpp
+  LCDI2C.cpp
+  LiquidCrystal_I2C.cpp
+  Generando código...
