@@ -71,9 +71,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>..\Interfaz\include;..\firmatacpp\vendor\serial\include\serial\impl;..\firmatacpp\vendor\serial\include;..\firmatacpp;..\firmatacpp\include;$(IncludePath)</IncludePath>
+    <OutDir>$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>..\Interfaz\include;..\firmatacpp\vendor\serial\include\serial\impl;..\firmatacpp\vendor\serial\include;..\firmatacpp;..\firmatacpp\include;$(IncludePath)</IncludePath>
+    <OutDir>$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -143,14 +145,6 @@
     <ClInclude Include="include\I2Cplugin.h" />
     <ClInclude Include="include\servo.h" />
     <ClInclude Include="include\stepper.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\firmatacpp\firmatacpp.vcxproj">
-      <Project>{fe0f7016-321e-3c07-b1f7-e6e6d9b01808}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\firmatacpp\vendor\serial\serial.vcxproj">
-      <Project>{ee2c7e68-5904-3e0b-8469-4410a19eb6ca}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
