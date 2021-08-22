@@ -15,13 +15,13 @@ namespace interfaz {
 
 	class Servo {
 	public:
-		Servo(interfaz::Interfaz * _i, uint8_t _pin);
+		Servo(interfaz::Interfaz * _i, uint8_t _deviceNum);
 		~Servo();
 
 		void setPosition(uint8_t pos);
 	private:
 		interfaz::Interfaz* i;
-		uint8_t pin;
+		uint8_t deviceNum;
 	};
 
 }

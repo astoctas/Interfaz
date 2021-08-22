@@ -88,8 +88,9 @@ namespace interfaz {
 	struct _config {
 		int max_dc;
 		int max_steppers;
-		std::vector<uint8_t> servos;
-		std::vector<uint8_t> inputs;
+		int max_servos;
+		//std::vector<uint8_t> servos;
+		//std::vector<uint8_t> inputs;
 	} config;
 
 	

@@ -24,7 +24,7 @@ namespace interfaz {
 			*/
 
 			serialio = new firmata::FirmSerial(port);
-			f = new firmata::Firmata<firmata::Base, firmata::I2C, firmata::AccelStepper, firmata::DC, firmata::LCD>(serialio);
+			f = new firmata::Firmata<firmata::Base, firmata::I2C, firmata::AccelStepper, firmata::DC, firmata::LCD, firmata::Servo>(serialio);
 			
 		}
 		catch (firmata::IOException e) {

@@ -1,2 +1,11 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets(1877,5): warning : The referenced project 'C:\Test\firmatacpp\ZERO_CHECK.vcxproj' does not exist.
-LINK : fatal error LNK1561: se debe definir el punto de entrada
+﻿  arduino.cpp
+  dc.cpp
+  I2Cplugin.cpp
+C:\Users\alejandro\Documents\Visual Studio 2019\Interfaz\src\I2Cplugin.cpp(38,21): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\alejandro\Documents\Visual Studio 2019\Interfaz\src\I2Cplugin.cpp(54,21): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  interfaz.cpp
+C:\Users\alejandro\Documents\Visual Studio 2019\Interfaz\src\interfaz.cpp(265,31): warning C4267: 'return': conversion from 'size_t' to 'uint8_t', possible loss of data
+  servo.cpp
+  stepper.cpp
+  Generating Code...
+LINK : fatal error LNK1561: entry point must be defined

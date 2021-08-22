@@ -85,8 +85,9 @@ namespace interfaz {
 		if (string(model) == "MEGA") {
 			config.max_dc = 8;
 			config.max_steppers = 3;
-			config.servos.insert(config.servos.end(), { 10,11,12 });
-			config.inputs.insert(config.inputs.end(),{ 54,55,56,57,58,59,60,61 });
+			config.max_servos = 3;
+			//config.servos.insert(config.servos.end(), { 10,11,12 });
+			//config.inputs.insert(config.inputs.end(),{ 54,55,56,57,58,59,60,61 });
 		}
 	}
 
@@ -100,9 +101,14 @@ namespace interfaz {
 			//_steppers.at(j)->setSpeed(_steppers.at(j)->speed);
 		}
 
+		for (int j = 0; j < config.max_servos; j++) {
+			_servos.push_back(new interfaz::Servo(this, j));
+		}
+		/*
 		for (int j = 0; j < config.servos.size(); j++) {
 			_servos.push_back(new interfaz::Servo(this, config.servos.at(j)));
 		}
+		*/
 
 
 	}

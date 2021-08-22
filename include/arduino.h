@@ -10,6 +10,7 @@
 #include "firmaccelstepper.h"
 #include "firmdc.h"
 #include "firmlcd.h"
+#include "firmservo.h"
 #include "firmserial.h"
 
 
@@ -21,7 +22,7 @@ namespace interfaz {
 		Arduino(char* port);
 		~Arduino();
 
-		firmata::Firmata<firmata::Base, firmata::I2C, firmata::AccelStepper, firmata::DC, firmata::LCD>* f = NULL;
+		firmata::Firmata<firmata::Base, firmata::I2C, firmata::AccelStepper, firmata::DC, firmata::LCD, firmata::Servo>* f = NULL;
 		firmata::FirmSerial* serialio;
 
 		void parse();

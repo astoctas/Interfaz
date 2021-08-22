@@ -1,1 +1,19 @@
-﻿  Interfaz.vcxproj -> C:\Users\Alejandro\Documents\Interfaz2.0\Software\VisualStudio\Interfaz\Release\Interfaz.lib
+﻿  arduino.cpp
+  dc.cpp
+  I2Cplugin.cpp
+  interfaz.cpp
+C:\Users\Alejandro\Source\Repos\astoctas\Interfaz\src\interfaz.cpp(131,15): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Alejandro\Source\Repos\astoctas\Interfaz\src\interfaz.cpp(138,16): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Alejandro\Source\Repos\astoctas\Interfaz\src\interfaz.cpp(145,16): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Alejandro\Source\Repos\astoctas\Interfaz\src\interfaz.cpp(152,16): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Alejandro\Source\Repos\astoctas\Interfaz\src\interfaz.cpp(159,16): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Alejandro\Source\Repos\astoctas\Interfaz\src\interfaz.cpp(166,16): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Alejandro\Source\Repos\astoctas\Interfaz\src\interfaz.cpp(173,16): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Alejandro\Source\Repos\astoctas\Interfaz\src\interfaz.cpp(180,16): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Alejandro\Source\Repos\astoctas\Interfaz\src\interfaz.cpp(187,16): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Alejandro\Source\Repos\astoctas\Interfaz\src\interfaz.cpp(195,16): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Alejandro\Source\Repos\astoctas\Interfaz\src\interfaz.cpp(203,16): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Alejandro\Source\Repos\astoctas\Interfaz\src\interfaz.cpp(265,31): warning C4267: 'return': conversión de 'size_t' a 'uint8_t'; posible pérdida de datos
+  servo.cpp
+  stepper.cpp
+  Interfaz.vcxproj -> C:\Users\Alejandro\Source\Repos\astoctas\Interfaz\Release\Interfaz.lib

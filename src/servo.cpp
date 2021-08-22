@@ -4,8 +4,9 @@
 
 namespace interfaz {
 
-	Servo::Servo(interfaz::Interfaz* _i, uint8_t _pin)
-		: i(_i), pin(_pin) {
+	Servo::Servo(interfaz::Interfaz* _i, uint8_t _deviceNum)
+		: i(_i), deviceNum(_deviceNum) {
+		//i->f->servoAttach(deviceNum);
 		//i->f->pinMode(pin, MODE_SERVO);
 	}
 
@@ -14,7 +15,7 @@ namespace interfaz {
 
 
 	void Servo::setPosition(uint8_t pos) {
-		i->f->analogWriteExtended(pin, pos);
+		i->f->servoWrite(deviceNum, pos);
 	}
 
 
